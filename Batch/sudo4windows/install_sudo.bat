@@ -1,0 +1,1 @@
+powershell -command "& { Get-Content sudo.ps1 | Add-Content $PROFILE }"
