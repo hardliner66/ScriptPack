@@ -75,7 +75,10 @@ OpenCodeInCurrent()
     IfExist, C:\Program Files\Microsoft VS Code\Code.exe
         Run, "C:\Program Files\Microsoft VS Code\Code.exe" "%full_path%"
     else
-        Run, "C:\Program Files (x86)\Microsoft VS Code\Code.exe" "%full_path%"
+    	IfExist, C:\Program Files (x86)\Microsoft VS Code\Code.exe
+        	Run, "C:\Program Files (x86)\Microsoft VS Code\Code.exe" "%full_path%"
+        else
+        	Run, "C:\Users\sbiedermann\AppData\Local\Programs\Microsoft VS Code\Code.exe" "%full_path%"
 }
 
 ; Opens the command shell 'code' in the directory browsed in Explorer.
